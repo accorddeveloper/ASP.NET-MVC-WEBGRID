@@ -1,0 +1,50 @@
+﻿@model mySpecialMVC.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Student</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tFees)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tFees)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tMonth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tMonth)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

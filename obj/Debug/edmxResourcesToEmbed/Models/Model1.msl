@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentDBModelStoreContainer" CdmEntityContainer="StudentDBEntities">
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="StudentDBModel.Month">
+        <MappingFragment StoreEntitySet="Months">
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="Students_Id" ColumnName="Students_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="StudentDBModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="sID" ColumnName="sID" />
+          <ScalarProperty Name="sName" ColumnName="sName" />
+          <ScalarProperty Name="tFees" ColumnName="tFees" />
+          <ScalarProperty Name="tYear" ColumnName="tYear" />
+          <ScalarProperty Name="tMonth" ColumnName="tMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

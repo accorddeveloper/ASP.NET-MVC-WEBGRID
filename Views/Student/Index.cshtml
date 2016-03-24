@@ -1,0 +1,77 @@
+﻿@model IList<mySpecialMVC.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tMonth)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tMonth)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+
+</table>*@
+<hr />
+
+@{var grid = new WebGrid(Model, rowsPerPage:3);}
+@grid.GetHtml(caption: "Employee List", columns: grid.Columns(grid.Column("sID", "Student ID"),
+    grid.Column("sName", "Student Name"),
+    grid.Column("tFees", "Tution Fees"),
+    grid.Column("tMonth", "Month"),
+    grid.Column("tYear", "Year"),
+grid.Column(header: "Edit",
+format:@<text><a href="">Edit</a></text>
+)));
+
+<img src='@Url.Action("Pie")' />
+
+
+
+
+
+
+

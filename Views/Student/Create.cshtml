@@ -1,0 +1,68 @@
+﻿@model mySpecialMVC.Models.Student
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Student</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.sID)
+            @Html.ValidationMessageFor(model => model.sID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.sName)
+            @Html.ValidationMessageFor(model => model.sName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tFees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tFees)
+            @Html.ValidationMessageFor(model => model.tFees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tYear)
+            @Html.ValidationMessageFor(model => model.tYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tMonth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tMonth)
+            @Html.ValidationMessageFor(model => model.tMonth)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,11 @@
+﻿@model IList<mySpecialMVC.Models.Student>
+
+@{
+    ViewBag.Title = "Pie2";
+}
+
+<h2>Pie2</h2>
+@{
+    var myChart = new Chart(width: 400, height: 400)
+        .AddTitle("My MVC chart Example").AddSeries(chartType: "Pie", xValue: Model, xField: "sName", yValues: Model, yFields: "tFees").Write();
+}
